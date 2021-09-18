@@ -65,6 +65,7 @@ jobs:
           - 80:8080
     steps:
       - uses: actions/checkout@v2
+      - run: echo $(ls -l)
       - name: Validate OpenAPI definition
         uses: ./action
         with:
