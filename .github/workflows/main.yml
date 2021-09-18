@@ -52,3 +52,21 @@ jobs:
         uses: char0n/swagger-editor-validate@master
         with:
           definition-file: examples/openapi-2-0.yaml
+  test_with_container:
+    runs-on: ubuntu-latest
+    container: ubuntu:18.04
+    services:
+      # Label used to access the service container
+      swagger-editor:
+        # Docker Hub image
+        image: swaggerapi/swagger-editor
+        ports:
+          # Maps port 8080 on service container to the host 80
+          - 80:8080
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate OpenAPI definition
+        uses: char0n/swagger-editor-validate@master
+        with:
+          swagger-editor-url: http://localhost/
+          definition-file: examples/openapi-2-0.yaml
