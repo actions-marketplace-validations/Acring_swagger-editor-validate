@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Validate OpenAPI definition
-        uses: ./action
+        uses: char0n/swagger-editor-validate@master
         with:
           swagger-editor-url: http://localhost/
           definition-file: examples/openapi-2-0.yaml
@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Validate OpenAPI definition
-        uses: ./action 
+        uses: char0n/swagger-editor-validate@master
         with:
           definition-file: examples/openapi-2-0.yaml
   test_with_container:
@@ -65,9 +65,8 @@ jobs:
           - 80:8080
     steps:
       - uses: actions/checkout@v2
-      - run: echo $(ls -l)
       - name: Validate OpenAPI definition
-        uses: ./action
+        uses: ./.github/actions/action
         with:
           swagger-editor-url: http://swagger-editor/
           definition-file: examples/openapi-2-0.yaml
