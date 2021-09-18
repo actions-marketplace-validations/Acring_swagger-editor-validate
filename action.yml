@@ -20,6 +20,10 @@ runs:
         node-version: '14'
     - run: echo $(ls -l)
       shell: bash
+    - run: |
+        echo $PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        echo $PUPPETEER_EXECUTABLE_PATH
+      shell: bash
     - run: export PUPPETEER_SKIP_DOWNLOAD='true' && npm install
       shell: bash
     - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
