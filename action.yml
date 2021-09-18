@@ -15,13 +15,6 @@ runs:
     - uses: ianwalter/puppeteer-container@v4.0.0
       with:
         args: pnpm i
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: echo $(ls -l)
-      shell: bash
-    - run: npm install
-      shell: bash
     - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
       shell: bash
 branding:
