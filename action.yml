@@ -16,6 +16,8 @@ runs:
       with:
         args: pnpm i
     - run: |
+        export PUPPETEER_SKIP_DOWNLOAD='true'
+        echo $PUPPETEER_SKIP_DOWNLOAD
         echo $PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
         echo $PUPPETEER_EXECUTABLE_PATH
       shell: bash
@@ -24,7 +26,7 @@ runs:
         node-version: "14"
     - run: echo $(ls -l)
       shell: bash
-    - run: export PUPPETEER_SKIP_DOWNLOAD='true' && npm install
+    - run: npm install
       shell: bash
     - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
       shell: bash
