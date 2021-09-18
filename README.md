@@ -1,4 +1,4 @@
-# Swagger Editor Validate Github Action
+# Swagger Editor Validate Github Action Pluto
 
 This GitHub Action validates OpenAPI (OAS) definition file using [Swagger Editor](https://editor.swagger.io/).
 
