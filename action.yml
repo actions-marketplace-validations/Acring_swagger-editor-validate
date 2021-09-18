@@ -12,6 +12,8 @@ inputs:
 runs:
   using: composite
   steps:
+    - run: apt-get install chromium-browser
+      shell: bash
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
