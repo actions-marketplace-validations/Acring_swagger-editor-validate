@@ -12,9 +12,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: cd ${{ github.action_path }} && npm install
+    - run: echo $(ls -l)
       shell: bash
-    - run: cd ${{ github.action_path }} && SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
+    - run: npm install
+      shell: bash
+    - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
       shell: bash
 branding:
   icon: 'file-text'
