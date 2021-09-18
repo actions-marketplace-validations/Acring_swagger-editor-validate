@@ -68,5 +68,5 @@ jobs:
       - name: Validate OpenAPI definition
         uses: ./
         with:
-          swagger-editor-url: http://swaggerapi/swagger-editor/
+          swagger-editor-url: http://localhost/swagger-editor/
           definition-file: examples/openapi-2-0.yaml
