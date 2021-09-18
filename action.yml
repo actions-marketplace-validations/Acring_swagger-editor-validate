@@ -19,7 +19,9 @@ runs:
       shell: bash
     - run: npm install
       shell: bash
-    - uses: looqbox/yarn-action-chromium@v1.1.0
+    - uses: ianwalter/puppeteer-container@v4.0.0
+      with:
+        args: pnpm i
     - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
       shell: bash
 branding:
