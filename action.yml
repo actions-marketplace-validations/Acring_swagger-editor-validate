@@ -15,9 +15,9 @@ runs:
     - uses: actions/setup-node@v2
       with:
         node-version: "14"
-    - run: npm install
+    - run: cd $GITHUB_ACTION_PATH && npm install
       shell: bash
-    - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node ${{github.action_path}}/src/index.js
+    - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node $GITHUB_ACTION_PATH/src/index.js
       shell: bash
 branding:
   icon: "file-text"
