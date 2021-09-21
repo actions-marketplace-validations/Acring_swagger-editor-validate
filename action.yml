@@ -17,7 +17,7 @@ runs:
         node-version: "14"
     - run: npm install
       shell: bash
-    - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node src/index.js
+    - run: SWAGGER_EDITOR_URL=${{ inputs.swagger-editor-url }} DEFINITION_FILE=${{ inputs.definition-file }} node ${{github.action_path}}/src/index.js
       shell: bash
 branding:
   icon: "file-text"
