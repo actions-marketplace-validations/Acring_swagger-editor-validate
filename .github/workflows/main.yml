@@ -54,7 +54,7 @@ jobs:
           definition-file: examples/openapi-2-0.yaml
   test_with_container:
     runs-on: ubuntu-latest
-    container: ubuntu:latest 
+    container: ianwalter/puppeteer:v4.0.0
     services:
       # Label used to access the service container
       swagger:
